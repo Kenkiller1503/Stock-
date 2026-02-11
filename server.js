@@ -1,0 +1,25 @@
+const express = require('express');
+const fetch = require('node-fetch');
+
+const app = express();
+
+app.use(express.static('public'));
+
+app.get('/api/price/:code', async (req, res) => {
+  const code = req.params.code.toUpperCase();
+
+  const url = `https://finfo-api.vndirect.com.vn/v4/stock_prices?symbol=${code}`;
+
+  try {
+    const r = await fetch(url);
+    const data = await r.json();
+
+    res.json(data);
+  } catch (err) {
+    res.json({ error: 'Lỗi dữ liệu' });
+  }
+});
+
+app.listen(3000, () => {
+  console.log('Chạy: http://localhost:3000');
+});

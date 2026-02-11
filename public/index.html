@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Xem Chứng Khoán</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<h2>Xem Giá Cổ Phiếu</h2>
+
+<input id="code" placeholder="Nhập mã (VD: VNM)">
+<button onclick="load()">Xem</button>
+
+<br><br>
+
+<canvas id="chart" width="600"></canvas>
+
+<script>
+let chart;
+
+async function load() {
+  const code = document.getElementById('code').value;
+
+  const res = await fetch('/api/price/' + code);
+  const json = await res.json();
+
+  const list = json.data || [];
+
+  const labels = list.map(i => i.tradingDate);
+  const prices = list.map(i => i.close);
+
+  if (chart) chart.destroy();
+
+  chart = new Chart(chartCanvas, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: code,
+        data: prices,
+        borderColor: 'green'
+      }]
+    }
+  });
+}
+</script>
+
+</body>
+</html>

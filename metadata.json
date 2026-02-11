@@ -1,0 +1,8 @@
+{
+  "name": "UPBOTRADING",
+  "description": "Nền tảng giao dịch chứng khoán thông minh và miễn phí của Công ty CP Chứng khoán UPBO",
+  "requestFramePermissions": [
+    "geolocation",
+    "camera"
+  ]
+}
