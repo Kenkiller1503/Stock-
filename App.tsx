@@ -1,5 +1,6 @@
 
 import * as React from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { SpotlightShell } from "./components/vaneck/SpotlightShell";
 import Navbar from "./components/Navbar";
 import { VaneckFooter } from "./components/vaneck/VaneckFooter";
@@ -296,6 +297,7 @@ const MainContent = () => {
 
       <VaneckFooter />
       <Chatbot />
+      <SpeedInsights />
     </SpotlightShell>
   );
 };
