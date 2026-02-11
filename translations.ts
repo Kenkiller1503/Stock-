@@ -322,7 +322,7 @@ export const translations = {
       statusOnline: "Hệ thống đã chuyển sang chế độ Trực tuyến. Nhân viên hỗ trợ đã sẵn sàng.",
       statusOffline: "Hệ thống đã chuyển sang chế độ Ngoại tuyến. Trợ lý AI UPBOT sẽ hỗ trợ bạn.",
       agentResponse: "Cảm ơn bạn đã liên hệ. Nhân viên tư vấn sẽ phản hồi trong giây lát...",
-      agentFollowUp: "Chào bạn, tôi là Minh. Tôi có thể giúp gì cho giao dịch của bạn hôm nay?",
+      agentFollowUp: "Chào bạn, tôi là Trợ lý Ảo. Tôi có thể giúp gì cho giao dịch của bạn hôm nay?",
       sources: "Nguồn tham khảo"
     },
     insightsData: [
